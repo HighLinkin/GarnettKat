@@ -1,0 +1,15 @@
+@Mock
+private lateinit var context: Context
+
+lateinit var utils:Utils
+
+@Before
+fun launch()
+{
+    utils=Utils(context)
+}
+
+@Test
+fun emailValidator_NullEmail_ReturnsFalse() {
+    assertFalse(utils.isValidEmail(null))
+}
